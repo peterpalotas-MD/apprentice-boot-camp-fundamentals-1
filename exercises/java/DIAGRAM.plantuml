@@ -1,0 +1,30 @@
+@startuml
+
+!theme plain
+top to bottom direction
+skinparam linetype ortho
+
+class AnimalCard
+class Card {
+  + toString(): String
+  + getValue(): String
+  + snap(Card): boolean
+}
+class Deck {
+  + addToDeck(Card): void
+  + playingCardDeck(): List<Card>
+  + getCards(): String[]
+  + deal(): Card
+  + addToDeck(List<Card>): void
+  + animalCardDeck(): List<Card>
+  + shuffleCards(): void
+  + toString(): String
+}
+class playingCard
+
+AnimalCard   -[#000082,plain]-^  Card        
+Deck         -[#595959,dashed]->  AnimalCard  : "«create»"
+Deck        "1" *-[#595959,plain]-> "cards\n*" Card        
+Deck         -[#595959,dashed]->  playingCard : "«create»"
+playingCard  -[#000082,plain]-^  Card        
+@enduml
