@@ -1,12 +1,12 @@
 package cards;
 
-import cards.basicCards.Deck;
+import cards.basicCards.cardDeck;
 
 import java.util.Arrays;
 
 public class Cards {
 
-    Deck deck = new Deck();
+    cardDeck cardDeck = new cardDeck();
 
 
 
@@ -17,7 +17,7 @@ public class Cards {
     }
 
     public String[] getCards() {
-        this.deck.createUnshuffledDeck();
-        return this.deck.returnDeck();
+        this.cardDeck.createUnshuffledDeck();
+        return this.cardDeck.returnDeck();
     }
 }
