@@ -1,4 +1,4 @@
-package cards;
+package supersnap;
 
 public enum Animal {
     AARDVARK,

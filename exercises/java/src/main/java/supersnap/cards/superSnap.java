@@ -1,23 +1,27 @@
-package cards;
+package supersnap.cards;
+
+
+import supersnap.Card;
+import supersnap.Deck;
 
 import java.util.Scanner;
 
-class Snap {
+public class superSnap {
     private int player1Score;
     private int player2Score;
     private final Deck deck;
 
-    Snap(AnimalDeck deck) {
+    public superSnap(Deck deck) {
         this.deck = deck;
-        deck.shuffle();
+        deck.shuffleCards();
     }
 
-    public static void main(String[] args) {
-        Snap snap = new Snap(new AnimalDeck());
-        snap.play();
-    }
+//    public static void main(String[] args) {
+//        Snap snap = new Snap(new AnimalDeck());
+//        snap.play();
+//    }
 
-    void play() {
+    public void play() {
         Scanner scanner = new Scanner(System.in);
 
         Card previousCard = null;
@@ -25,7 +29,7 @@ class Snap {
             Card currentCard = deck.deal();
             System.out.println(currentCard);
             String input = scanner.nextLine();
-            if (input.length() > 0 && input.charAt(0) == 'a') {
+            if (!input.isEmpty() && input.charAt(0) == 'a') {
                 if (currentCard.snap(previousCard)) {
                     System.out.println("SNAP! score Player 1");
                     player1Score++;
